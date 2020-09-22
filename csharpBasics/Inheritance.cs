@@ -16,26 +16,12 @@ public abstract class Shape
     }
 
 }
-public class Square: Shape,IshapeWithSides
+public class Square: Rectangle
 {
-    public Square(double side)
+    public Square(double side) :base(side ,side)
     {
-        Side= side;      
-    }
-    public double Side { get; set; }
-    public override double GetArea()=> Side*Side;
-    public override double GetCircumference()=> 4*Side;
-    public override void Display()
-    {
-       Console.WriteLine($"Displaying result for square of side {Side}");
-       Console.WriteLine($"Area:{this.GetArea()}");
-       Console.WriteLine($"Perimeter:{this.GetCircumference()}");
-       Console.WriteLine($"Diagonal:{this.GetDiagonal()}");
-    }
-
-    public double GetDiagonal() => Math.Sqrt(2*Side*Side);
         
- 
+    }
 }
 
 public class Rectangle: Shape,IshapeWithSides 
@@ -52,7 +38,7 @@ public class Rectangle: Shape,IshapeWithSides
     public override void Display()
     {
        Console.WriteLine($"Displaying result for Rectangle of Lenght {Length} and Breadth {Breadth}");
-       Console.WriteLine($"Area:{this.GetArea()}");
+       Console.WriteLine($"Area:{this.GetArea()} sq unit");
        Console.WriteLine($"Perimeter:{this.GetCircumference()}");
         Console.WriteLine($"Diagonal:{this.GetDiagonal()}");
     
@@ -78,3 +64,5 @@ public class Circle: Shape
        
     }
 }
+
+
