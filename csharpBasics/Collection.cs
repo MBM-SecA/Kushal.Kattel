@@ -1,46 +1,46 @@
+using System;
 using System.Collections.Generic;
-
-namespace LearnCollections
+namespace Collections
 {
-    public class Collections
+    public class LearnCollections
     {
         void LearnLists()
-        {
-            List<byte> ages = new List<byte>() {3,4};
-            ages.Add(35);
+        {   
+            // defining list of certian type
+            List<byte> ages =new List<byte>();
+            //adding item to the list
+            ages.Add(1);
             ages.Add(10);
             ages.Add(100);
             ages.Add(255);
+            //removing item from list
+            ages.Remove(10);
+            //if repated removes first oocurrence
 
-            List<Country>countries =new List <Country>();
-            Country country1 =new Country();
 
-            countries.Add(new Country());
+
+            List<country> countries = new List<country>();
+            countries.Add(new country());
+
+
         }
-    void LearnDictionary()
-    {
-        //var CountryCapitals = new Dictionary<string,string>
-        Dictionary<string , string> CountryCapitals = new Dictionary<string,string>()
+        public class country
         {
-            ["Nepal"]="Kathmandu";
-            ["France"]="Paris";
-            ["Spain"]="Madrid";
-        };
-        //CountryCapitals.Add("Nepal","Kathmandu");
-        //CountryCapitals.Add("France","Paris");
-        //CountryCapitals.Add("Spain","Madrid");
-
-        foreach (var country in CountryCapitals)
-        {
-            Console.WriteLine($"Country: {country.Key} Capital City : {country.value}");
+            public string Name{get; set;}
         }
-    }
-    }
-    }
+        public void LearnDictionary()
+        {
+            Dictionary<string , string> countryCapitals = new Dictionary<string, string>
+            {
+                ["Nepal"]="kathmandu",
+                ["India"]="New Dehli",
+                ["Bhutan"]="Thimpu"
 
-    }
-    public class Country
-    {
-        public string Name{get; set;}
+            };
+           foreach( var country in countryCapitals)
+           {
+               Console.WriteLine($"Country:{country.Key} Capital city:{country.Value}");
+           }
+        }
     }
 }

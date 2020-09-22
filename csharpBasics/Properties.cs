@@ -1,33 +1,27 @@
 using System;
-
-namespace EnumsAndProperties
+internal class Person
 {
-    internal class Person
-    {
-        public byte age;
-        private int grade;
-        private DateTime dob;
-
-        // getter-setter
-        public byte Age
+    private byte age;
+    int grade;
+    DateTime dob;
+    public byte Age
+    {       // property
+        get { return age; }
+        set
         {
-            get { return age; }
-            set
+            if (value > 30 && value < 40)
             {
-                if (value > 30 && value < 40)
-                {
-                    age = value;
-                }
+                age = value;
+            }
+            else
+            {
+                Console.WriteLine("Error!!! age should be between 30 to 40.");
             }
         }
-
-        // Auto-implemented properties
-        public string Address { get; set; }
-
-        // Read-only
-        public string Name { get; }
-
-
     }
+    //Auto- implemented properties
+    public string Address { get; set; }
 
+    //Read-only 
+    public string Name { get; }
 }
