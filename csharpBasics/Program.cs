@@ -1,6 +1,10 @@
-﻿using  Collections;
+﻿//using  Collections;
+using System.Linq;
 using System;
-  class Program
+using System.IO;
+
+
+    public class Program
     {     
          static void Main()
         {
@@ -11,11 +15,22 @@ using System;
           //rectangle.Display();
           //Circle circle = new Circle(45.4);
           //circle.Display();
-          FileIO fileIO =new FileIO();
-          fileIO.LearnFileHandling();
-          fileIO.LearnFileInfo();
-     
-     fileIO.LearnDirectories();
+//file handling
+
+          //FileIO fileIO =new FileIO();
+          // fileIO.LearnFileHandling();
+          //fileIO.LearnFileInfo();
+          //fileIO.LearnDirectories();
+          var countriesText = File.ReadAllText("Countries.txt");
+          string[] countries = countriesText.Split("\n\r");
+
+          var countriesWidthNInitial = countries.Where(x => x.StartsWith("N")).Select(x => x);
+
+          foreach(var country in countriesWidthNInitial)
+          {
+            Console.WriteLine(country);
+          }
+
         } 
     
 
