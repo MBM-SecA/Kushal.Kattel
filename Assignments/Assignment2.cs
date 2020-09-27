@@ -1,3 +1,7 @@
+//QQ create a folder "ABC" ,create 10 subfolders in "ABC".Each subfolder should contain 
+//a C# file with hello world program.
+
+
 using System.IO;
 using System;
 using System.Text;
@@ -6,7 +10,7 @@ public class Directories
 {
     public void CreateDirectories()
     {
-        string directoryName = @"D:\FIles0f6thsem\Example\Parent";
+        string directoryName = @"D:\git\Netcentric\MBM A\Kushal.Kattel";
         string subDirectoryName="Subfolder";
         string helloworldprogram = @"using System; 
 
