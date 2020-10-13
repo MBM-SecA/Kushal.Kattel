@@ -1,0 +1,28 @@
+@model Person 
+@{
+    ViewData["Title"] = "Person";
+}
+
+
+<h1>Detail for Employees</h1>
+<hr>
+<h4>@Model.FirstName @Model.SurName</h4>
+<table class="table table-green">
+  <thead>
+    <tr>
+
+      <th scope="col">Nick Name</th>
+      <th scope="col">Hobbies</th>
+      <th scope="col">Who can be Friends</th>
+    </tr>
+  </thead>
+
+<tbody>
+       <tr scope="row">
+            <td>@Model.NickName</td>
+            <td>@Model.Hobbies</td>
+            <td>@Model.WhoCanBeFriends</td>
+        </tr>   
+    
+  </tbody>
+</table>
